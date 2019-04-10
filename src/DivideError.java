@@ -8,9 +8,20 @@ public class DivideError {
 		int res;
 		try {
 			res=uncontrolled(a);
-		} finally {
+		} catch (Exception e) {
 			System.out.println("Got an error");
 			res=0;
+		}
+		return res;
+	}
+	
+	public int withlog(int a) {
+		int res;
+		res=0;
+		try {
+			res=this.uncontrolled(0);
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
 		}
 		return res;
 	}
